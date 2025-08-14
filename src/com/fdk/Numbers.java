@@ -2,15 +2,23 @@ package com.fdk;
 
 public class Numbers {
 
-	public static void sumNumbers(int a, int b) {
-
-		int sum = a + b;
-
-		System.out.println("sum is : " + sum);
-
-	}
-
 	public static void main(String[] args) {
-		Numbers.sumNumbers(14,16);
+		int[] arr = { 80,60,10,90,20,40 };
+
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = 0; j < arr.length - 1 - i; j++) {
+				if (arr[j] > arr[j + 1]) {
+
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+
+		System.out.print("Sorted array: ");
+		for (int num : arr) {
+			System.out.print(num + " ");
+		}
 	}
 }
